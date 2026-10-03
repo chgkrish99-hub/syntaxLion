@@ -192,12 +192,12 @@ const FAQS = [
 
 function GradientButton({ children, className = "", ...props }) {
   return (
-    <button
-      className={`inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold text-white bg-gradient-to-r from-violet-600 to-cyan-400 hover:opacity-90 transition shadow-lg shadow-violet-200 ${className}`}
+    <a
+      href="#pricing-configurator" className={`inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold text-white bg-gradient-to-r from-violet-600 to-cyan-400 hover:opacity-90 transition shadow-lg shadow-violet-200 ${className}`}
       {...props}
     >
       {children}
-    </button>
+    </a>
   );
 }
 
