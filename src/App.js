@@ -1006,7 +1006,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
         <div>
           <div className="flex items-center gap-2 font-extrabold text-lg text-white mb-4">
-            <span className="text-2xl">🦁</span> SyntaxLion
+            <span className="text-2xl"></span>SyntaxLion
           </div>
           <p className="text-sm text-slate-400 mb-5">
             SyntaxLion designs and architects elite multi-tenant enterprise
