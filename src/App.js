@@ -1013,9 +1013,6 @@ function Footer() {
             software, automation systems, and high-tech digital transformations.
           </p>
           <div className="flex gap-4 text-lg">
-            <span>💼</span>
-            <span>🐙</span>
-            <span>💬</span>
           </div>
         </div>
 
