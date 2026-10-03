@@ -221,7 +221,6 @@ function Navbar() {
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2 font-extrabold text-lg text-slate-900">
-          <span className="text-2xl">🦁</span>
           Syntax<span className="text-violet-600">Lion</span>
         </a>
 
@@ -314,7 +313,7 @@ function Hero() {
           <div className="flex flex-wrap gap-4">
             <GradientButton>LAUNCH PROJECT CONFIGURATOR 📄</GradientButton>
             <a href="#services" className="inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold border border-slate-300 hover:border-violet-400 transition">
-              EXPLORE SERVICES ⌄
+              EXPLORE SERVICES
             </a>
           </div>
         </div>
@@ -323,7 +322,7 @@ function Hero() {
           <span className="absolute -top-3 right-6 text-xs font-bold bg-gradient-to-r from-violet-600 to-cyan-400 text-white rounded-full px-3 py-1">
             LION CORE V3.0
           </span>
-          <div className="flex items-center justify-center h-48 text-7xl">🦁</div>
+          <div className="flex items-center justify-center h-48 text-7xl"> </div>
           <div className="border-t border-slate-200 pt-4 mt-4">
             <div className="flex items-center justify-between mb-3">
               <p className="font-semibold text-sm text-slate-900">System Diagnostics</p>
