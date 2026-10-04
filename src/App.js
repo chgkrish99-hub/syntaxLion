@@ -1,5 +1,8 @@
 import React, { useState, useMemo } from "react";
 import emailjs from "@emailjs/browser";
+import FacebookIcon from "./icons/facebook-light-icon.svg";
+import LinkedinIcon from "./icons/linkedin.jpg";
+import YoutubeIcon from "./icons/youtube-light-icon.svg";
 
 /* ---------------------------------------------
    Static data
@@ -139,7 +142,7 @@ const PROJECTS = [
 const TESTIMONIALS = [
   {
     quote:
-      "SyntaxLion completely changed how we handle inbound client queries. The WhatsApp AI agent integration they developed qualifies 24/7, routing warm leads directly to our representatives. Our conversions increased by 42% in just two months!",
+      "Teckstan completely changed how we handle inbound client queries. The WhatsApp AI agent integration they developed qualifies 24/7, routing warm leads directly to our representatives. Our conversions increased by 42% in just two months!",
     initials: "DK",
     name: "Daniel K.",
     title: "VP of Growth, ApexRent Ltd",
@@ -147,7 +150,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "The multi-tenant SaaS architecture build was absolute perfection. SyntaxLion's clean Next.js patterns and reliable cloud deployment enabled us to pass rigorous security validation checks with enterprise clients on our first attempt.",
+      "The multi-tenant SaaS architecture build was absolute perfection. Teckstan's clean Next.js patterns and reliable cloud deployment enabled us to pass rigorous security validation checks with enterprise clients on our first attempt.",
     initials: "SM",
     name: "Sophia M.",
     title: "Chief Technical Officer, AlphaAdvisor",
@@ -166,7 +169,7 @@ const TESTIMONIALS = [
 const FAQS = [
   {
     q: "What exactly is an \u201cAI-First\u201d architecture?",
-    a: "Conventional platforms patch basic template sites with third-party iframe chatbots. SyntaxLion architectures are natively engineered from the ground up for cognitive workloads. This means custom vector storage layers, dynamic Retrieval-Augmented Generation (RAG) loops, intelligent LLM agent routing, and asynchronous webhook pipelines built into clean Next.js server actions.",
+    a: "Conventional platforms patch basic template sites with third-party iframe chatbots. Teckstan architectures are natively engineered from the ground up for cognitive workloads. This means custom vector storage layers, dynamic Retrieval-Augmented Generation (RAG) loops, intelligent LLM agent routing, and asynchronous webhook pipelines built into clean Next.js server actions.",
   },
   {
     q: "How do you guarantee scalability during traffic spikes?",
@@ -192,12 +195,22 @@ const FAQS = [
 
 function GradientButton({ children, className = "", ...props }) {
   return (
-    <a
-      href="#pricing-configurator" className={`inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold text-white bg-gradient-to-r from-violet-600 to-cyan-400 hover:opacity-90 transition shadow-lg shadow-violet-200 ${className}`}
+    <button
+      className={`inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold text-white bg-gradient-to-r from-violet-600 to-cyan-400 hover:opacity-90 transition shadow-lg shadow-violet-200 ${className}`}
       {...props}
     >
       {children}
-    </a>
+    </button>
+  );
+}
+
+function LogoMark({ className = "" }) {
+  return (
+    <span
+      className={`inline-flex items-center justify-center rounded-lg bg-gradient-to-br from-violet-600 to-cyan-400 font-black text-white ${className}`}
+    >
+      T
+    </span>
   );
 }
 
@@ -221,7 +234,8 @@ function Navbar() {
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2 font-extrabold text-lg text-slate-900">
-          Syntax<span className="text-violet-600">Lion</span>
+          <LogoMark className="w-8 h-8 text-lg" />
+          Teck<span className="text-violet-600">Stan</span>
         </a>
 
         <nav className="hidden lg:flex items-center gap-7">
@@ -320,9 +334,11 @@ function Hero() {
 
         <div className="relative bg-white border border-slate-200 rounded-2xl shadow-xl p-8">
           <span className="absolute -top-3 right-6 text-xs font-bold bg-gradient-to-r from-violet-600 to-cyan-400 text-white rounded-full px-3 py-1">
-            LION CORE V3.0
+            TECKSTAN CORE V3.0
           </span>
-          <div className="flex items-center justify-center h-48 text-7xl"> </div>
+          <div className="flex items-center justify-center h-48">
+            <LogoMark className="w-24 h-24 text-5xl shadow-lg shadow-violet-200" />
+          </div>
           <div className="border-t border-slate-200 pt-4 mt-4">
             <div className="flex items-center justify-between mb-3">
               <p className="font-semibold text-sm text-slate-900">System Diagnostics</p>
@@ -331,7 +347,7 @@ function Hero() {
               </span>
             </div>
             <div className="bg-slate-900 rounded-lg p-4 font-mono text-xs text-emerald-400 space-y-1">
-              <p>&gt; initializing quantum neural s_lion_core</p>
+              <p>&gt; initializing quantum neural s_teckstan_core</p>
               <p>&gt; active logo gradient nodes: 42</p>
               <div className="w-full h-1.5 bg-slate-700 rounded-full mt-2 overflow-hidden">
                 <div className="h-full w-4/5 bg-gradient-to-r from-violet-500 to-cyan-400" />
@@ -402,10 +418,10 @@ function WhyUs() {
   return (
     <section id="why-choose-us" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
-        <SectionEyebrow>Why SyntaxLion</SectionEyebrow>
+        <SectionEyebrow>Why Teckstan</SectionEyebrow>
         <h2 className="text-4xl font-black text-center text-slate-900 mb-4">Engineered For Domination</h2>
         <p className="text-center text-slate-600 max-w-2xl mx-auto mb-14">
-          Discover the architectural differences that elevate SyntaxLion from
+          Discover the architectural differences that elevate Teckstan from
           conventional IT shops to a world-class AI digital titan.
         </p>
 
@@ -642,34 +658,41 @@ function VisualizedAutomations() {
 
           <div className="border-t border-slate-200 mb-8" />
 
-          {/* steps — always a single left-to-right row, scrolls on narrow screens */}
-          <div className="overflow-x-auto pb-2">
-            <div className="flex items-stretch gap-0 min-w-[760px] lg:min-w-0">
-              {steps.map((s, i) => (
-                <React.Fragment key={s.title}>
-                  <div
-                    className={`flex-1 rounded-xl border p-6 text-center bg-white transition-all duration-300 ${activeStep === i
-                      ? "border-cyan-400 bg-cyan-50 shadow-lg shadow-cyan-200 scale-[1.03]"
-                      : "border-slate-200"
-                      }`}
-                  >
-                    <div className={`w-12 h-12 mx-auto rounded-full flex items-center justify-center text-xl mb-4 ${s.color}`}>
-                      {s.icon}
-                    </div>
-                    <h3 className="font-bold text-sm text-slate-900 mb-1">{s.title}</h3>
-                    <p className="text-xs text-slate-500">{s.sub}</p>
+          {/* steps — vertical stack on mobile, horizontal row with arrows from sm up */}
+          <div className="flex flex-col sm:flex-row items-stretch gap-4 sm:gap-0">
+            {steps.map((s, i) => (
+              <React.Fragment key={s.title}>
+                <div
+                  className={`flex-1 rounded-xl border p-6 text-center bg-white transition-all duration-300 ${activeStep === i
+                    ? "border-cyan-400 bg-cyan-50 shadow-lg shadow-cyan-200 scale-[1.03]"
+                    : "border-slate-200"
+                    }`}
+                >
+                  <div className={`w-12 h-12 mx-auto rounded-full flex items-center justify-center text-xl mb-4 ${s.color}`}>
+                    {s.icon}
                   </div>
+                  <h3 className="font-bold text-sm text-slate-900 mb-1">{s.title}</h3>
+                  <p className="text-xs text-slate-500">{s.sub}</p>
+                </div>
 
-                  {i < steps.length - 1 && (
-                    <div className="flex items-center justify-center px-2 flex-shrink-0">
+                {i < steps.length - 1 && (
+                  <>
+                    {/* downward arrow, mobile only */}
+                    <div className="flex sm:hidden items-center justify-center py-1">
+                      <span className={`text-xl transition-colors ${activeStep === i ? "text-cyan-500" : "text-slate-300"}`}>
+                        ↓
+                      </span>
+                    </div>
+                    {/* rightward arrow, sm and up */}
+                    <div className="hidden sm:flex items-center justify-center px-2 flex-shrink-0">
                       <span className={`text-xl transition-colors ${activeStep === i ? "text-cyan-500" : "text-slate-300"}`}>
                         →
                       </span>
                     </div>
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
+                  </>
+                )}
+              </React.Fragment>
+            ))}
           </div>
 
           {/* trigger bar */}
@@ -1006,13 +1029,22 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
         <div>
           <div className="flex items-center gap-2 font-extrabold text-lg text-white mb-4">
-            <span className="text-2xl"></span>SyntaxLion
+            <LogoMark className="w-8 h-8 text-lg" /> Teckstan
           </div>
           <p className="text-sm text-slate-400 mb-5">
-            SyntaxLion designs and architects elite multi-tenant enterprise
+            Teckstan designs and architects elite multi-tenant enterprise
             software, automation systems, and high-tech digital transformations.
           </p>
           <div className="flex gap-4 text-lg">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <img src={FacebookIcon} alt="Facebook" className="w-6 h-6" />
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+              <img src={LinkedinIcon} alt="LinkedIn" className="w-6 h-6" />
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+              <img src={YoutubeIcon} alt="YouTube" className="w-6 h-6" />
+            </a>
           </div>
         </div>
 
@@ -1068,7 +1100,7 @@ function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-xs text-slate-500">
-        <p>© {new Date().getFullYear()} SyntaxLion - Daksh Global Innovations Pvt Ltd.. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Teckstan. All rights reserved.</p>
         <div className="flex gap-6">
           <span>Privacy Charter</span>
           <span>Terms of Service</span>
