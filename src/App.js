@@ -325,7 +325,9 @@ function Hero() {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <GradientButton>LAUNCH PROJECT CONFIGURATOR 📄</GradientButton>
+            <a href="#pricing-configurator">
+              <GradientButton>LAUNCH PROJECT CONFIGURATOR 📄</GradientButton>
+            </a>
             <a href="#services" className="inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold border border-slate-300 hover:border-violet-400 transition">
               EXPLORE SERVICES
             </a>
@@ -369,7 +371,7 @@ function Hero() {
           ))}
         </div>
       </div>
-    </section>
+    </section >
   );
 }
 
