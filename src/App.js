@@ -254,9 +254,11 @@ function Navbar() {
           <a href="#pricing-configurator" className="text-sm font-semibold border border-slate-300 rounded-lg px-4 py-2.5 hover:border-violet-400 transition">
             ESTIMATE PROJECT
           </a>
-          <GradientButton className="text-sm px-5 py-2.5">
-            GET STARTED →
-          </GradientButton>
+          <a href="#contact">
+            <GradientButton className="text-sm px-5 py-2.5">
+              GET STARTED →
+            </GradientButton>
+          </a>
         </div>
 
         <button className="lg:hidden flex flex-col gap-1.5" onClick={() => setOpen(!open)} aria-label="Menu">
@@ -273,7 +275,9 @@ function Navbar() {
               {l}
             </a>
           ))}
-          <GradientButton className="text-sm w-full">GET STARTED →</GradientButton>
+          <a href="#contact" onClick={() => setOpen(false)} className="block">
+            <GradientButton className="text-sm w-full">GET STARTED →</GradientButton>
+          </a>
         </div>
       )}
     </header>
@@ -371,7 +375,7 @@ function Hero() {
           ))}
         </div>
       </div>
-    </section >
+    </section>
   );
 }
 
@@ -960,6 +964,18 @@ function Contact() {
             Start Your Consultation
           </h2>
           <form className="space-y-5" onSubmit={handleSubmit}>
+            <div>
+              <label className="block text-xs font-bold tracking-wide text-slate-500 uppercase mb-2">
+                Your Name
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="e.g. Daniel Kumar"
+                required
+                className="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              />
+            </div>
             <div>
               <label className="block text-xs font-bold tracking-wide text-slate-500 uppercase mb-2">
                 Company / Project Name
